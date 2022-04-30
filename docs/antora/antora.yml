@@ -1,6 +1,6 @@
 name: peacetrue-beans
 title: 简单 Java 对象
-version: dev
+version: master
 asciidoc:
   attributes:
     numbered: '@'
