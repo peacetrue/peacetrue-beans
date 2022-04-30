@@ -1,0 +1,9 @@
+name: peacetrue-beans
+title: 简单 Java 对象
+version: master
+asciidoc:
+  attributes:
+    numbered: '@'
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc

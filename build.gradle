@@ -1,0 +1,7 @@
+group "com.github.peacetrue"
+version "${peaceBeansVersion}${tailSnapshot}"
+description "声明常用属性和对象的接口"
+
+dependencies {
+    testImplementation "org.reflections:reflections"
+}
