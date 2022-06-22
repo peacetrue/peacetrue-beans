@@ -5,7 +5,7 @@ package com.github.peacetrue.beans.properties.deleted;
  **/
 public interface DeletedCapable {
 
-    String PROPERTY_CODE = "deleted";
+    String PROPERTY_DELETED = "deleted";
 
     Boolean getDeleted();
 }

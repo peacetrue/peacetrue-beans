@@ -4,7 +4,7 @@
 
 == 属性信息
 
-汇总 22 个常用属性。
+汇总 23 个常用属性。
 
 |===
 |名称 |描述 |类型 |备注
@@ -72,7 +72,7 @@
 |createdTime
 |创建时间
 |待定
-|类型通常是 `Date` 或者 `LocalDateTime`
+|类型通常是 `DateRange` 或者 `LocalDateTimeRange`
 
 |modifierId
 |修改者主键
@@ -82,10 +82,15 @@
 |modifiedTime
 |修改时间
 |待定
-|全称是最近修改时间，类型通常是 `Date` 或者 `LocalDateTime`
+|全称是最近修改时间，类型通常是 `DateRange` 或者 `LocalDateTimeRange`
 
 |value
 |值
+|字符串
+|
+
+|clientId
+|客户端标志
 |字符串
 |
 
@@ -151,17 +156,7 @@
 
 |Operator
 |操作信息
-|operatorId、operatorName
-|
-
-|ToBeSignedBean
-|待签名对象
-|timestamp、nonce
-|
-
-|SignedBean
-|已签名对象
-|timestamp、nonce、signature
+|id、name
 |
 |===
 

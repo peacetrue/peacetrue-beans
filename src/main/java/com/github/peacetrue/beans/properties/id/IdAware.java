@@ -7,4 +7,5 @@ package com.github.peacetrue.beans.properties.id;
 public interface IdAware<T> {
 
     void setId(T id);
+
 }

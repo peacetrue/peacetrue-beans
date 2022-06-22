@@ -8,4 +8,12 @@
 
 == 1.1.0
 
-实现 22 个常用属性和 6 个常用 Bean。
+实现 23 个常用属性和 4 个常用 Bean。
+
+== 1.2.0
+
+* 调整 `Operator` 的结构：
+** `operatorId` -> `id`
+** `operatorName` -> `name`
+* 添加 GitHub workflows
+* 添加 GitHub 徽章
