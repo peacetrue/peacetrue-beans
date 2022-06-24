@@ -17,3 +17,5 @@
 ** `operatorName` -> `name`
 * 添加 GitHub workflows
 * 添加 GitHub 徽章
+* 添加 com.github.peacetrue.gradle.build-convention 插件
+* 添加本地版本
