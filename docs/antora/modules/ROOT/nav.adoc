@@ -1,2 +1,4 @@
 * xref:index.adoc[]
+* xref:property.adoc[]
+* xref:bean.adoc[]
 * xref:version.adoc[]
