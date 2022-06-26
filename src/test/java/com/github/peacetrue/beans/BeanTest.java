@@ -44,7 +44,7 @@ class BeanTest {
         String prefix = "com.github.peacetrue.beans.properties";
         Reflections reflections = new Reflections(prefix, new SubTypesScanner(false));
         Set<String> allTypes = reflections.getAllTypes();
-        Assertions.assertEquals(23 * 3, allTypes.size());
+        Assertions.assertEquals(24 * 3, allTypes.size());
     }
 
 
@@ -88,7 +88,7 @@ class BeanTest {
         }
     }
 
-    /** 总共 6 个 Bean */
+    /** 总共 4 个 Bean */
     @Test
     void beanCount() {
         String prefix = "com.github.peacetrue.beans";

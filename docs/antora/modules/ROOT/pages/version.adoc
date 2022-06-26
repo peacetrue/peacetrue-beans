@@ -19,3 +19,7 @@
 * 添加 GitHub 徽章
 * 添加 com.github.peacetrue.gradle.build-convention 插件
 * 添加本地版本
+
+== 1.3.0
+
+添加 `Operator` 属性，可获取 `Operator` 对象。属性和对象重名，需要改善。
