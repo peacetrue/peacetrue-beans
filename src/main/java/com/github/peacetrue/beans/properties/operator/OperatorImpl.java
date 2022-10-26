@@ -1,4 +1,4 @@
-package com.github.peacetrue.beans.operator;
+package com.github.peacetrue.beans.properties.operator;
 
 import lombok.*;
 
@@ -11,8 +11,5 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OperatorImpl<T> implements Operator<T> {
-
-    private T id;
-    private String name;
-
+    private com.github.peacetrue.beans.operator.OperatorCapable<T> operator;
 }
