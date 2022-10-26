@@ -5,10 +5,21 @@ package com.github.peacetrue.beans.operator;
  **/
 public interface Operator<T> extends OperatorCapable<T>, OperatorAware<T> {
 
-    static <S extends OperatorCapable<U>, T extends OperatorAware<U>, U> T setOperator(S source, T target) {
+    static <T> void setOperator(OperatorAware<T> target, OperatorCapable<T> source) {
         target.setId(source.getId());
         target.setName(source.getName());
-        return target;
+    }
+
+    /**
+     * 设置操作者默认值。
+     *
+     * @param operator        当前操作者
+     * @param defaultOperator 默认操作者
+     * @param <T>             操作者主键类型
+     */
+    static <T> void setDefault(Operator<T> operator, OperatorCapable<T> defaultOperator) {
+        if (operator.getId() == null) operator.setId(defaultOperator.getId());
+        if (operator.getName() == null) operator.setName(defaultOperator.getName());
     }
 
 }

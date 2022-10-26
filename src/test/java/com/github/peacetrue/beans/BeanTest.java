@@ -44,7 +44,7 @@ class BeanTest {
         String prefix = "com.github.peacetrue.beans.properties";
         Reflections reflections = new Reflections(prefix, new SubTypesScanner(false));
         Set<String> allTypes = reflections.getAllTypes();
-        Assertions.assertEquals(24 * 3, allTypes.size());
+        Assertions.assertEquals(24 * 3 + 1, allTypes.size());
     }
 
 
@@ -111,7 +111,7 @@ class BeanTest {
     void operator() {
         OperatorImpl<Long> source = new OperatorImpl<>(1L, "admin");
         OperatorImpl<Long> target = new OperatorImpl<>();
-        Operator.setOperator(source, target);
+        Operator.setOperator(target, source);
         Assertions.assertEquals(source.toString(), target.toString());
     }
 
