@@ -1,13 +1,16 @@
-= 属性
+= 参考指南
+
+== 属性
 
 汇总 23 个常用属性。
 
+[%autowidth.stretch]
 |===
 |名称 |描述 |类型 |备注
 
 |id
 |主键
-|待定
+|泛型
 |唯一标识（系统识别），类型通常是长整形
 
 |code
@@ -27,7 +30,7 @@
 
 |serialNumber
 |序号
-|待定
+|泛型
 |排序时使用，类型通常为长整形
 
 |message
@@ -37,12 +40,12 @@
 
 |data
 |数据
-|待定
+|泛型
 |接口请求响应结果中使用
 
 |ownerId
 |所有者主键
-|待定
+|泛型
 |记录的所有者，通常关联 *用户主键*
 
 |deleted
@@ -52,7 +55,7 @@
 
 |operatorId
 |操作者主键
-|待定
+|泛型
 |通常关联 *用户主键*
 
 |operatorName
@@ -62,23 +65,23 @@
 
 |creatorId
 |创建者主键
-|待定
+|泛型
 |通常关联 *用户主键*
 
 |createdTime
 |创建时间
-|待定
-|类型通常是 `DateRange` 或者 `LocalDateTimeRange`
+|泛型
+|类型通常是 `LocalDateTimeRange`
 
 |modifierId
 |修改者主键
-|待定
+|泛型
 |全称是最近修改者主键，通常关联 *用户主键*
 
 |modifiedTime
 |修改时间
-|待定
-|全称是最近修改时间，类型通常是 `DateRange` 或者 `LocalDateTimeRange`
+|泛型
+|全称是最近修改时间，类型通常是 `LocalDateTimeRange`
 
 |value
 |值
@@ -116,10 +119,40 @@
 |操作是否成功，指示请求状态会很有用
 |===
 
-== creatorId 与 ownerId
+=== creatorId 与 ownerId
 
 谁创建的记录，creatorId 就是谁，通常 ownerId 与 creatorId 相同；但在一些业务场景中，自己创建的记录可以分配给其他人管理。
 
-== modifiedTime
+=== modifiedTime
 
 数据同步时会很有用，上一次同步到什么时间点，这次只同步最新改动过的数据，需要根据 modifiedTime 判断。
+
+
+== Bean
+
+汇总 4 个常用 Bean，多个属性组成 Bean。
+
+[%autowidth.stretch]
+|===
+|名称 |描述 |包含的属性 |备注
+
+|Create
+|创建信息
+|creatorId、createdTime
+|
+
+|Modify
+|修改信息
+|modifierId、modifiedTime
+|
+
+|CreateModify
+|创建修改信息
+|creatorId、createdTime、modifierId、modifiedTime
+|
+
+|Operator
+|操作信息
+|id、name
+|
+|===

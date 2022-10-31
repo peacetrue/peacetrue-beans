@@ -1,10 +1,6 @@
-= 版本
+= 版本变更
 
 :numbered!: ''
-
-== 1.0.0
-
-已丢失。
 
 == 1.1.0
 
@@ -23,3 +19,7 @@
 == 1.3.0
 
 添加 `Operator` 属性，可获取 `Operator` 对象。属性和对象重名，需要改善。
+
+== 1.3.1
+
+`Operator` 属性获取 `Operator` 对象改为 `OperatorCapable<T>` 对象。

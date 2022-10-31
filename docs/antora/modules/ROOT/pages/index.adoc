@@ -1,18 +1,50 @@
-= 简介
-:website: https://peacetrue.github.io
+= 概述
+:app-group: com.github.peacetrue
 :app-name: peacetrue-beans
-:foresight-repoId: 61960c96-0de4-447b-8ac9-a68a34636e5f
+:website: https://peacetrue.github.io
+:foresight-repo-id: 61960c96-0de4-447b-8ac9-a68a34636e5f
+:imagesdir: docs/antora/modules/ROOT/assets/images
 
 image:https://img.shields.io/github/workflow/status/peacetrue/{app-name}/build/master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]
-image:https://img.shields.io/lgtm/grade/java/github/peacetrue/{app-name}["LGTM Grade",link="https://lgtm.com/projects/g/peacetrue/{app-name}"]
 image:https://snyk.io/test/github/peacetrue/{app-name}/badge.svg["Snyk",link="https://app.snyk.io/org/peacetrue"]
-image:https://api-public.service.runforesight.com/api/v1/badge/success?repoId={foresight-repoId}["Foresight",link="https://foresight.thundra.io/repositories/github/peacetrue/{app-name}/test-runs"]
+image:https://api-public.service.runforesight.com/api/v1/badge/success?repoId={foresight-repo-id}["Foresight",link="https://foresight.thundra.io/repositories/github/peacetrue/{app-name}/test-runs"]
 image:https://img.shields.io/codecov/c/github/peacetrue/{app-name}/master["Codecov",link="https://app.codecov.io/gh/peacetrue/{app-name}"]
+image:https://img.shields.io/nexus/r/{app-group}/{app-name}?label={app-name}&server=https%3A%2F%2Foss.sonatype.org%2F["{app-name}",link="https://oss.sonatype.org/index.html#nexus-search;gav~~{app-name}~~~"]
 
-{website}/{app-name}/[{app-name}] 以接口的形式声明 Bean 涉及的常用属性。
 //@formatter:off
-Bean 特指简单的 Java 对象，完全由属性组成，不含业务逻辑方法。
 
-一个属性会包含 3 个接口：一个读接口、一个写接口和一个读写接口。
-读接口中提供属性名的常量字符串。
+== 简介（What）
 
+{website}/{app-name}/[{app-name}] 是一个封装常用 Bean 属性接口的资源库。
+共提供 23 个常用属性，每个属性涉及 3 个接口：一个读接口、一个写接口和一个读写接口，
+例如：`Id`、`IdCapable`、`IdAware`。
+
+== 背景（Why）
+
+Bean 是由属性构成的，属性是 Bean 的基本元素，
+抽象出属性接口可提供最细粒度的复用。
+
+== 用法（How）
+
+引用如下 Gradle 依赖：
+
+[source%nowrap,gradle,subs="specialchars,attributes"]
+----
+implementation "{app-group}:{app-name}:\{latest-version}"
+----
+
+//TODO 链接坐标转换器
+如需转换为其他格式的 GAV 坐标，可使用 http://bee.peacetrue.cn/function/conversion/gav[坐标转换器^]。
+
+
+== 参与者（Who）
+
+. peace(xiayouxue@hotmail.com)
+
+== 活动（When）
+
+初始提交于 2022-04-30，最近提交于 2022-10-30。
+
+== 许可证（License）
+
+https://github.com/peacetrue/{app-name}/blob/master/LICENSE[Apache License 2.0^]
