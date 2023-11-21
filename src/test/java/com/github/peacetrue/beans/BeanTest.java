@@ -5,6 +5,9 @@ import com.github.peacetrue.beans.createmodify.CreateModify;
 import com.github.peacetrue.beans.modify.Modify;
 import com.github.peacetrue.beans.operator.Operator;
 import com.github.peacetrue.beans.operator.OperatorImpl;
+import com.github.peacetrue.beans.properties.id.IdCapable;
+import com.github.peacetrue.beans.properties.operator.OperatorAware;
+import com.github.peacetrue.beans.properties.operator.OperatorCapable;
 import lombok.extern.slf4j.Slf4j;
 import org.jeasy.random.EasyRandom;
 import org.jeasy.random.EasyRandomParameters;
@@ -143,4 +146,48 @@ class BeanTest {
         Assertions.assertEquals(testBean.getModifierId(), operator.getId());
         Assertions.assertEquals(testBean.getModifiedTime(), now);
     }
+
+    @Test
+    void setOperator() {
+        OperatorImpl<Object> target = new OperatorImpl<>();
+        OperatorImpl<Object> source = new OperatorImpl<>(1, "admin");
+        Operator.setDefault(target, source);
+        Assertions.assertEquals(target, source);
+
+        source.setId(2);
+        Operator.setDefault(target, source);
+        Assertions.assertNotEquals(target, source);
+
+        Operator.setOperator(target, source);
+        Assertions.assertEquals(target, source);
+    }
+
+    static <S extends OperatorCapable<U>, T extends OperatorAware<U>, U> T setOperator(S source, T target) {
+        target.setOperator(source.getOperator());
+        return target;
+    }
+
+    @Test
+    void equalsHashCode() {
+
+        TestBean testBean = new TestBean();
+        Assertions.assertTrue(IdCapable.equals(testBean, testBean));
+        Assertions.assertFalse(IdCapable.equals(testBean, null));
+        Assertions.assertFalse(IdCapable.equals(testBean, new Object()));
+        Assertions.assertTrue(IdCapable.equals(new TestBean(), new TestBean()));
+
+        TestBean self = new TestBean();
+        TestBean equals = new TestBean();
+        Assertions.assertEquals(self, equals);
+        Assertions.assertNotEquals(self.hashCode(), equals.hashCode());
+
+        self.setId(1L);
+        Assertions.assertNotEquals(self, equals);
+        Assertions.assertNotEquals(self.hashCode(), equals.hashCode());
+
+        equals.setId(1L);
+        Assertions.assertEquals(self, equals);
+        Assertions.assertEquals(self.hashCode(), equals.hashCode());
+    }
+
 }
